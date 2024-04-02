@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="form__wrap">
+      <h1>Форма регистрации</h1>
+      <form name="form" class="form__form">
+        <div>
+          <label for="name" class="form__label label">Имя:</label>
+          <input
+            type="text"
+            name="name"
+            class="form__input"
+            minlength="2"
+            maxlength="20"
+            pattern="[a-zA-Zа-яА-ЯЁё\s]+"
+            placeholder="Введите имя"
+            required />
+          <span id="name-error" class="form__error-message"></span>
+        </div>
+
+        <div>
+          <label for="email" class="form__label">Email:</label>
+          <input
+            type="email"
+            name="email"
+            class="form__input"
+            placeholder="Введите почту"
+            required />
+          <span id="email-error" class="form__error-message"></span>
+        </div>
+
+        <div>
+          <label for="age" class="form__label">Возраст:</label>
+          <input
+            type="number"
+            name="age"
+            class="form__input"
+            placeholder="Введите возраст"
+            required />
+          <span id="age-error" class="form__error-message"></span>
+        </div>
+
+        <div class="form__radio">
+          <label for="sex">Пол:</label>
+          <input type="radio" name="sex" id="male" value="male" required />
+          <label for="male">Муж</label>
+          <input type="radio" name="sex" id="female" value="female" required />
+          <label for="female">Жен</label>
+        </div>
+
+        <div>
+          <label for="select" class="form__label">Выберите профессию:</label>
+          <select id="select" name="select" class="form__input" required>
+            <option value="" disabled selected hidden>
+              Выберите профессию
+            </option>
+            <option value="Врач">Врач</option>
+            <option value="Программист">Программист</option>
+            <option value="Учитель">Учитель</option>
+            <option value="Дизайнер">Дизайнер</option>
+            <option value="Инженер">Инженер</option>
+            <option value="Продавец">Продавец</option>
+            <option value="Другое">Другое</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="password" class="form__label">Введите пароль:</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            class="form__input"
+            minlength="8"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            placeholder="Введите пароль"
+            required />
+          <span id="password-error" class="form__error-message"></span>
+        </div>
+
+        <div>
+          <label for="consent">Согласие на обработку данных:</label>
+          <input type="checkbox" id="consent" name="consent" required />
+        </div>
+
+        <button type="submit" name="button" class="form__submit" disabled>
+          Отправить
+        </button>
+        <p class="form__error-message" id="errorMessage"></p>
+      </form>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
