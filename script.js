@@ -96,3 +96,14 @@ addEventListener("submit", function (event) {
   button.style.boxShadow = " 0 0 10px rgba(0, 0, 0, 0.6)";
   button.style.color = "#777775";
 });
+
+const inputs = document.querySelectorAll("input");
+
+inputs.forEach(function (input) {
+  input.addEventListener("focus", function () {
+    input.style.border = "1px solid ##6b5f58";
+  });
+  input.addEventListener("blur", function () {
+    input.style.border = "";
+  });
+});
